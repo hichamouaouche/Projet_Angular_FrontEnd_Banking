@@ -21,6 +21,7 @@ export class CustomersComponent implements OnInit {
     // Appel au backend lors du chargement du composant
     this.http.get("http://localhost:8085/customers").subscribe({
       next: (data) => {
+        console.log("Données reçues :", data);
         this.customers = data;
       },
       error: (err) => {
